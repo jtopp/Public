@@ -3,12 +3,12 @@ function Get-ReversedLinkedList {
         $HeadNode  # has .next and .value. .next is another node, or $null if the end of the list.
     )
 
+    $NextNode = $HeadNode
     $ReversedNodes = @()
     $ReversedNodes += [PSCustomObject]@{
         next = $null
         value = $HeadNode.value
     }
-    $NextNode = $HeadNode
     do {
         $NextNode = $NextNode.next
         $ReversedNodes += [PSCustomObject]@{
