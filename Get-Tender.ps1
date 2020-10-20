@@ -6,8 +6,7 @@ function Get-Tender {
         $CoinValues
     )
     $Coins = 0
-    $SortedCoinValues = $CoinValues | Sort-Object -Descending
-    $SortedCoinValues | ForEach-Object {
+    $CoinValues | Sort-Object -Descending | ForEach-Object {
         if ($Change -ge $_) {
             $Coins += [int][math]::floor($Change / $_)
             $Change = $Change % $_
