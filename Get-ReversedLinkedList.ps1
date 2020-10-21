@@ -7,7 +7,7 @@ function Get-ReversedLinkedList {
     $ReversedNodes = @()
     $ReversedNodes += [PSCustomObject]@{
         next = $null
-        value = $HeadNode.value
+        value = $NextNode.value
     }
     do {
         $NextNode = $NextNode.next
